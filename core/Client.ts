@@ -21,9 +21,8 @@ export default class Client {
         return this.#nome
     }
 
-    get idadde() {
+    get idade() {
         return this.#idade
     }
 
 }
-
