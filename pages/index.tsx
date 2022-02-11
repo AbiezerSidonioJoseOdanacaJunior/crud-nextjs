@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import Form from "../components/Form";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import Client from "../core/Client";
@@ -34,12 +35,13 @@ export default function Home() {
       titulo="Cadastro Simples"
        >
          <div className="flex justify-end">
-            <Button className="mb-5">Novo CLiente</Button>
+            <Button cor="green" className="mb-5">Novo CLiente</Button>
          </div>
-         <Table clientes={clientes} 
+        {/* <Table clientes={clientes} 
          clienteSelecionada={clienteSelecionado}
          clienteExcluido={clienteExcluido}
-          ></Table>
+  ></Table> */}
+        <Form cliente={clientes[0]} ></Form>
        </Layout>
     </div>
   );
