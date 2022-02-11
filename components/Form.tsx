@@ -5,6 +5,8 @@ import Input from "./Input";
 
 interface FormProps {
     cliente: Client
+    clienteMudou?: (cliente: Client) => void
+    cancelado?: () => void
 }
 
 
@@ -20,8 +22,9 @@ export default function Form(props: FormProps) {
             <Input texto="Nome" valor={nome} valorMudou={setNome} className="mb-4" />
             <Input texto="Idade" tipo="number" valor={idade} valorMudou={setIdade} className="mb-4" />
             <div className="mt-2 flex justify-end">
-                <Button className="mr-3" cor="blue" > {id ? 'Alterar' : 'Salvar'} </Button>
-                <Button className="mr-0">Cancelar</Button>
+                <Button className="mr-3" cor="blue" 
+                onClick={() => props.clienteMudou?.(new Client(nome, +idade, id))} > {id ? 'Alterar' : 'Salvar'} </Button>
+                <Button onClick={props.cancelado} className="mr-0">Cancelar</Button>
             </div>
         </div>
     )
