@@ -34,7 +34,7 @@ export default class ColecaoDados implements ClienteRepositorio {
         return this.colecao().doc(cliente.id).delete()
     }
 
-    async obterTodos(cliente: Client): Promise<Client[]> {
+    async obterTodos(): Promise<Client[]> {
       const query = await this.colecao().get()
         return query.docs.map(doc => doc.data())
     }
